@@ -1,0 +1,19 @@
+apply:
+  - //templates/base.module-template.yaml
+
+settings:
+  compose:
+    enabled: true
+
+dependencies:
+  - $compose.runtime: exported
+  - $compose.ui: exported
+  - $compose.foundation: exported
+  - $libs.androidx.lifecycle.runtime.compose
+  - $compose.material3
+  - $compose.components.resources
+  - $compose.preview
+  - $compose.hotReload.runtimeApi
+
+dependencies@android:
+  - $compose.uiTooling

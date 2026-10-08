@@ -1,0 +1,11 @@
+# WARNING: This module should be used only by the app.
+# Other library modules should only depend on the API library module.
+# The app must inject the implementation.
+product:
+  type: kmp/lib
+  platforms: [android, iosArm64, iosSimulatorArm64, jvm, wasmJs]
+apply:
+  - //templates/base.module-template.yaml
+
+dependencies:
+  - ../api

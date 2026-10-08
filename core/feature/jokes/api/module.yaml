@@ -1,0 +1,6 @@
+product:
+  type: kmp/lib
+  platforms: [android, iosArm64, iosSimulatorArm64, jvm, wasmJs]
+
+apply:
+  - //templates/base.module-template.yaml

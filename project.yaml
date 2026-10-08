@@ -1,5 +1,8 @@
 modules:
   - androidApp
+  - core/feature/jokes/api
+  - core/feature/jokes/impl
+  - core/feature/jokes/ui
   - desktopApp
   - iosApp
   - shared

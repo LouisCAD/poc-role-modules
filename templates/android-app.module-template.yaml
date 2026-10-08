@@ -1,0 +1,2 @@
+apply:
+  - //templates/ui.module-template.yaml
