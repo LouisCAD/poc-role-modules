@@ -12,16 +12,14 @@ import kotlin.time.Clock
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
-class JokeGeneratorPocImpl(
-    private val randomJoke: suspend () -> TextJokeContent = { TextJokeContent(listOf("Lol")) }
-) : JokeGenerator() {
+class JokeGeneratorPocImpl : JokeGenerator() {
 
     override val jokesGenerationHistory: Flow<List<HistoricalJokeEntry>>
         field = MutableStateFlow<List<HistoricalJokeEntry>>(emptyList())
 
     override suspend fun getRandomJoke(): Joke = Joke(
         id = getNextJokeId(),
-        content = randomJoke()
+        content = defaultJokes.random()
     ).also { newJoke ->
         jokesGenerationHistory.update {
             it + HistoricalJokeEntry(
@@ -38,4 +36,13 @@ class JokeGeneratorPocImpl(
 
     @OptIn(ExperimentalUuidApi::class)
     private fun getNextJokeId(): JokeId = JokeId(Uuid.generateV7().toHexDashString())
+}
+
+private val defaultJokes = buildList {
+    this += TextJokeContent(listOf("Le soleil se lève sans poser les pieds par terre."))
+    this += TextJokeContent(listOf("Qu'est-ce qui est jaune et qui attend ?", "Jonathan"))
+    this += TextJokeContent(listOf("Comment appelle-t-on un cochon avec des ailes ?", "Un aéro-porc."))
+    this += TextJokeContent(listOf("Quel acteur a la main verte ?", "Jean Dujardin"))
+    this += TextJokeContent(listOf("Une femme arrive chez un barbier. Il dit quoi ?", "Feur !"))
+    this += TextJokeContent(listOf("Jacques a sa langue qui fourche. Il dit quoi ?", "Quoicoubeh !"))
 }
