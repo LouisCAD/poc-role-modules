@@ -8,4 +8,4 @@ apply:
   - //templates/base.module-template.yaml
 
 dependencies:
-  - ../api
+  - ../api: exported
