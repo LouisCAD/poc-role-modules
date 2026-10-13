@@ -4,3 +4,6 @@ product:
 
 apply:
   - //templates/base.module-template.yaml
+
+dependencies:
+  - $libs.compose.runtime.annotations: compile-only
