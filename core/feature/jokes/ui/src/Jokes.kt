@@ -42,7 +42,7 @@ fun Jokes(
         }
         LazyColumn {
             val history = jokesHistory ?: return@LazyColumn item { JokesLoading() }
-            itemsIndexed(history) { index, entry ->
+            itemsIndexed(history, key = { _, entry -> entry.id }) { index, entry ->
                 if (index != 0) HorizontalDivider()
                 JokeHistoryItem(entry)
             }
