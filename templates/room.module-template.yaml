@@ -1,0 +1,40 @@
+# To use Room for SQLite-based databases.
+
+dependencies:
+  - $libs.room3.runtime
+
+settings:
+  kotlin:
+    freeCompilerArgs:
+      - Xexpect-actual-classes
+    ksp:
+      processors:
+        - $libs.room3.compiler
+
+# We need separate schema locations for each platform, otherwise there might be concurrency issues.
+#TODO: Remove it when it's no longer necessary (no issue to reference yet).
+settings@android:
+  kotlin:
+    ksp:
+      processorOptions:
+        room.schemaLocation: ./generated-db-schema/android
+settings@iosArm64:
+  kotlin:
+    ksp:
+      processorOptions:
+        room.schemaLocation: ./generated-db-schema/iosArm64
+settings@iosSimulatorArm64:
+  kotlin:
+    ksp:
+      processorOptions:
+        room.schemaLocation: ./generated-db-schema/iosSimulatorArm64
+settings@jvm:
+  kotlin:
+    ksp:
+      processorOptions:
+        room.schemaLocation: ./generated-db-schema/jvm
+settings@wasmJs:
+  kotlin:
+    ksp:
+      processorOptions:
+        room.schemaLocation: ./generated-db-schema/wasmJs
