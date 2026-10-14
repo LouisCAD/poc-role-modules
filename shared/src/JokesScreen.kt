@@ -9,6 +9,8 @@ import com.louiscad.poc.rolemodules.core.feature.jokes.impl.JokeGeneratorPocImpl
 
 @Composable
 fun JokesScreen(modifier: Modifier = Modifier) {
-    val jokeGenerator: JokeGenerator = remember { JokeGeneratorPocImpl() }
+    val jokeGenerator: JokeGenerator = remember {
+        JokeGeneratorPocImpl(databaseNameOrPath = "jokes")
+    }
     Jokes(jokeGenerator, modifier)
 }
