@@ -3,10 +3,21 @@
 dependencies:
   - $libs.room3.runtime
 
+dependencies@jvm:
+  - $libs.androidx.sqlite.bundled
+
+dependencies@web:
+  - $libs.androidx.sqlite.web
+
+settings@native:
+  kotlin:
+    linkerOptions:
+      - "-lsqlite3"
+
 settings:
   kotlin:
     freeCompilerArgs:
-      - Xexpect-actual-classes
+      - -Xexpect-actual-classes
     ksp:
       processors:
         - $libs.room3.compiler

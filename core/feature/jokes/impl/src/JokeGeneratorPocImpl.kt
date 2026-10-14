@@ -1,10 +1,13 @@
 package com.louiscad.poc.rolemodules.core.feature.jokes.impl
 
+import com.louiscad.poc.rolemodules.core.common.room.RoomDatabaseConfig
 import com.louiscad.poc.rolemodules.core.feature.jokes.api.HistoricalJokeEntry
 import com.louiscad.poc.rolemodules.core.feature.jokes.api.Joke
 import com.louiscad.poc.rolemodules.core.feature.jokes.api.JokeGenerator
 import com.louiscad.poc.rolemodules.core.feature.jokes.api.JokeId
 import com.louiscad.poc.rolemodules.core.feature.jokes.api.TextJokeContent
+import com.louiscad.poc.rolemodules.core.feature.jokes.impl.internal.JokesDatabase
+import com.louiscad.poc.rolemodules.core.feature.jokes.impl.internal.create
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
@@ -12,7 +15,9 @@ import kotlin.time.Clock
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
-class JokeGeneratorPocImpl : JokeGenerator() {
+class JokeGeneratorPocImpl(databaseNameOrPath: String) : JokeGenerator() {
+
+    private val db = JokesDatabase.create(RoomDatabaseConfig(databaseNameOrPath))
 
     override val jokesGenerationHistory: Flow<List<HistoricalJokeEntry>>
         field = MutableStateFlow<List<HistoricalJokeEntry>>(emptyList())

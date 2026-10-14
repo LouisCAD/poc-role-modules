@@ -1,5 +1,7 @@
 modules:
   - androidApp
+  - core/common/coroutines
+  - core/common/room
   - core/feature/jokes/api
   - core/feature/jokes/impl
   - core/feature/jokes/ui
