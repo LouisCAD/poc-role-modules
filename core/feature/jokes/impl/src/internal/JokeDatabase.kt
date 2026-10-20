@@ -5,7 +5,7 @@ import androidx.room3.Database
 import androidx.room3.RoomDatabase
 import androidx.room3.RoomDatabaseConstructor
 import androidx.sqlite.SQLiteDriver
-import com.louiscad.poc.rolemodules.core.common.coroutines.IO
+import com.louiscad.poc.rolemodules.core.common.coroutines.IoOrDefault
 import com.louiscad.poc.rolemodules.core.common.room.RoomDatabaseConfig
 import com.louiscad.poc.rolemodules.core.feature.jokes.impl.internal.models.JokeEntity
 import com.louiscad.poc.rolemodules.core.feature.jokes.impl.internal.models.TextJokeLineEntity
@@ -14,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 internal fun JokesDatabase.Companion.create(config: RoomDatabaseConfig): JokesDatabase {
     return config.toDatabaseBuilder<JokesDatabase>()
         .setDriver(sqliteDriver())
-        .setQueryCoroutineContext(Dispatchers.IO)
+        .setQueryCoroutineContext(Dispatchers.IoOrDefault)
         .build()
 }
 

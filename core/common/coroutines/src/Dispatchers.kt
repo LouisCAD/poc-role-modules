@@ -4,6 +4,4 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 
 @Suppress("UnusedReceiverParameter")
-val Dispatchers.IO get() = ioDispatcher
-
-internal expect val ioDispatcher: CoroutineDispatcher
+expect val Dispatchers.IoOrDefault: CoroutineDispatcher
