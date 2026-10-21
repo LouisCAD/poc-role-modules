@@ -21,7 +21,7 @@ import androidx.compose.ui.draw.blur
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.fastForEachIndexed
-import com.louiscad.poc.rolemodules.core.feature.jokes.api.HistoricalJokeEntry
+import com.louiscad.poc.rolemodules.core.feature.jokes.api.models.HistoricalJokeEntry
 import com.louiscad.poc.rolemodules.core.feature.jokes.api.JokeGenerator
 import kotlinx.coroutines.channels.Channel
 

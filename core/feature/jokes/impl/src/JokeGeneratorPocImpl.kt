@@ -2,11 +2,11 @@ package com.louiscad.poc.rolemodules.core.feature.jokes.impl
 
 import androidx.room3.withWriteTransaction
 import com.louiscad.poc.rolemodules.core.common.room.RoomDatabaseConfig
-import com.louiscad.poc.rolemodules.core.feature.jokes.api.HistoricalJokeEntry
-import com.louiscad.poc.rolemodules.core.feature.jokes.api.Joke
+import com.louiscad.poc.rolemodules.core.feature.jokes.api.models.HistoricalJokeEntry
+import com.louiscad.poc.rolemodules.core.feature.jokes.api.models.Joke
 import com.louiscad.poc.rolemodules.core.feature.jokes.api.JokeGenerator
-import com.louiscad.poc.rolemodules.core.feature.jokes.api.JokeId
-import com.louiscad.poc.rolemodules.core.feature.jokes.api.TextJokeContent
+import com.louiscad.poc.rolemodules.core.feature.jokes.api.models.JokeId
+import com.louiscad.poc.rolemodules.core.feature.jokes.api.models.TextJokeContent
 import com.louiscad.poc.rolemodules.core.feature.jokes.impl.internal.JokesDatabase
 import com.louiscad.poc.rolemodules.core.feature.jokes.impl.internal.create
 import com.louiscad.poc.rolemodules.core.feature.jokes.impl.internal.models.JokeEntity

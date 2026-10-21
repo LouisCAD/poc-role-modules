@@ -1,4 +1,4 @@
-package com.louiscad.poc.rolemodules.core.feature.jokes.api
+package com.louiscad.poc.rolemodules.core.feature.jokes.api.models
 
 import androidx.compose.runtime.Immutable
 

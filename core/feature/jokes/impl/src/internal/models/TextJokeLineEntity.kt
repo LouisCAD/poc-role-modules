@@ -3,7 +3,7 @@ package com.louiscad.poc.rolemodules.core.feature.jokes.impl.internal.models
 import androidx.room3.Entity
 import androidx.room3.ForeignKey
 import androidx.room3.ForeignKey.Companion.CASCADE
-import com.louiscad.poc.rolemodules.core.feature.jokes.api.JokeId
+import com.louiscad.poc.rolemodules.core.feature.jokes.api.models.JokeId
 
 @Entity(
     tableName = "jokes_test_lines",
