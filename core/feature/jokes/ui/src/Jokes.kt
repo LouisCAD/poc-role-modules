@@ -34,8 +34,7 @@ fun Jokes(
     Column(modifier = modifier) {
         val newJokeRequests = remember { Channel<Unit>() }
         LaunchedEffect(newJokeRequests) {
-            @Suppress("UNNAMED_PROPERTY_WITH_IMPLICIT_UNIT_TYPE")
-            for (_ in newJokeRequests) generator.getRandomJoke()
+            for (_: Unit in newJokeRequests) generator.getRandomJoke()
         }
         Button(onClick = { newJokeRequests.trySend(Unit) }) {
             Text("New joke")
